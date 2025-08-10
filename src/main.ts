@@ -9,7 +9,7 @@ import { port } from './configs/app.config';
 const corsOrigins = ['http://localhost:7000'];
 
 async function bootstrap() {
-  // eslint-disable-next-line @typescript-eslint/await-thenable
+   
   // await otlpSdk.start();
   const app = await NestFactory.create(AppModule, {
     bufferLogs: true,

@@ -5,7 +5,10 @@ import { ProductMongoRepository } from './adapters/outbounds/product.mongo.repos
 import { ProductSchema, productsCollectionName } from './adapters/outbounds/product.schema';
 import { productRepositoryToken } from './applications/ports/product.repository';
 import { CreateProductUseCase } from './applications/usecases/createProduct.usecase';
+import { DeleteProductByIdUseCase } from './applications/usecases/deleteProductById.usecase';
 import { GetAllProductsUseCase } from './applications/usecases/getAllProducts.usecase';
+import { GetProductByIdUseCase } from './applications/usecases/getProductById.usecase';
+import { UpdateProductByIdUseCase } from './applications/usecases/updateProductById.usecase';
 
 @Module({
   imports: [MongooseModule.forFeature([{ name: productsCollectionName, schema: ProductSchema }])],
@@ -16,7 +19,10 @@ import { GetAllProductsUseCase } from './applications/usecases/getAllProducts.us
       useClass: ProductMongoRepository,
     },
     CreateProductUseCase,
+    DeleteProductByIdUseCase,
     GetAllProductsUseCase,
+    GetProductByIdUseCase,
+    UpdateProductByIdUseCase,
   ],
 })
 export class ProductModule {}
